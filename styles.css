@@ -87,6 +87,15 @@ html {
   );
   color: rgb(61, 55, 55);
 }
+.hero-image {
+  width: 150px;             /* Adjust size */
+  height: 150px;            /* Keep it square */
+  object-fit: cover;        /* Crop if needed */
+  border-radius: 50%;       /* Makes it circular */
+  border: 4px solid var(--mocha); /* Optional border */
+  margin: 1rem auto;        /* Center and add spacing */
+  display: block;
+}
 .hero .hero-subtitle {
   margin-bottom: 1.5rem; /* Adds space below each paragraph */
   margin-top: 1.5rem; /* Adds space below each paragraph */
@@ -405,3 +414,4 @@ html {
   color: #999;
   font-size: 0.9rem;
 }
+
