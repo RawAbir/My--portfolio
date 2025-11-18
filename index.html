@@ -5,6 +5,12 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Tanu Mittal – Product Management Portfolio</title>
   <link rel="stylesheet" href="styles.css">
+  <script type="text/javascript" src="https://cdn.emailjs.com/dist/email.min.js"></script>
+<script type="text/javascript">
+   (function(){
+      emailjs.init("1hLtd2_pWe9CFkMcw"); // Replace with your user ID / public key
+   })();
+</script>
 </head>
 <body>
 
@@ -24,6 +30,7 @@
   </nav>
 </header>
 
+
 <section id="home" class="hero">
   <div class="container hero-content">
     <h2 class="hero-intro">Hello! It's me</h2>
@@ -37,9 +44,12 @@
     </p>
     
     <div class="hero-buttons">
-      <a class="btn btn-primary" href="#contact">Get In Touch</a>
-      <a class="btn btn-outline" href="Tanumittal2025.pdf" target="_blank">Download Resume</a>
-    </div>
+    <a class="btn btn-primary" href="#contact">Get In Touch</a>
+    <a class="btn btn-outline" href="assets/Tanumittal2025.pdf" target="_blank" rel="noopener noreferrer">
+      Download Resume
+    </a>
+  </div>
+  
   </div>
 </section>
 
@@ -454,27 +464,48 @@
 
 
 <section id="contact" class="section section-alt">
-  <div class="container">
-    <h2>Contact Me</h2>
-    <p>Email: <a href="mailto:tanumittal@gmail.com">tanumittal@gmail.com</a></p>
-    <p>Phone: +46 (0)738857173</p>
-    <form class="contact-form">
-      <label>
-        Your Name<br>
-        <input type="text" name="name" required>
-      </label>
-      <label>
-        Your Email<br>
-        <input type="email" name="email" required>
-      </label>
-      <label>
-        Message<br>
-        <textarea name="message" rows="5" required></textarea>
-      </label>
-      <button class="btn btn-primary" type="submit">Send Message</button>
-    </form>
+<div class="container">
+  <h2>Contact Me</h2>
+
+  <script src="https://platform.linkedin.com/badges/js/profile.js" async defer type="text/javascript"></script>
+  <div class="badge-base LI-profile-badge" data-locale="en_US" data-size="large" data-theme="light" data-type="HORIZONTAL" data-vanity="mittaltanu" data-version="v1">
   </div>
+  
+  <form id="contact-form" class="contact-form">
+    <label>
+      Your Name<br>
+      <input type="text" name="name" required>
+    </label>
+    <label>
+      Your Email<br>
+      <input type="email" name="email" required>
+    </label>
+    <label>
+      Message<br>
+      <textarea name="message" rows="5" required></textarea>
+    </label>
+    <button class="btn btn-primary" type="submit">Send Message</button>
+  </form>
+</div>
+
+<script src="https://cdn.emailjs.com/dist/email.min.js"></script>
+<script>
+  emailjs.init('1hLtd2_pWe9CFkMcw'); // replace with your public key
+
+  document.getElementById('contact-form').addEventListener('submit', function(event) {
+      event.preventDefault(); // Prevent page refresh
+  
+      emailjs.sendForm('service_kxaet29', 'template_5lxp1gc', this)
+        .then(function() {
+            alert('Message sent successfully!');
+            document.getElementById('contact-form').reset();
+        }, function(error) {
+            alert('Failed to send message: ' + JSON.stringify(error));
+        });
+  });
+</script>
 </section>
+
 
 <footer class="site-footer">
   <div class="container">
@@ -511,5 +542,3 @@
   </script>
   
 </html>
-
-
