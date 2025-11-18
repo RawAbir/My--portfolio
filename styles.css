@@ -69,6 +69,13 @@ html {
 }
 
 /* Hero Section */
+.hero-intro {
+  font-size: 1rem; /* smaller than hero title */
+  color: var(--mocha); /* mocha color variable */
+  margin-bottom: 0.5rem;
+  font-weight: 400; /* lighter than main headings */
+}
+
 .hero {
   text-align: center;
   padding: 6rem 0;
@@ -79,6 +86,10 @@ html {
     var(--mocha-light) 100%
   );
   color: rgb(61, 55, 55);
+}
+.hero .hero-subtitle {
+  margin-bottom: 1.5rem; /* Adds space below each paragraph */
+  margin-top: 1.5rem; /* Adds space below each paragraph */
 }
 
 /* Buttons */
@@ -256,7 +267,7 @@ html {
   background: var(--mocha);
   border-radius: 50%;
   border: 2px solid #fff;
-  top: 1.2rem; /* adjust based on card padding */
+  top: 5.5rem; /* adjust based on card padding */
 }
 
 /* Timeline Item */
